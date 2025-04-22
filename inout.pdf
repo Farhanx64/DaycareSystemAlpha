@@ -1,0 +1,105 @@
+Enter number of parents providing ratings (max 100): 2
+Enter number of staff members (max 100): 3
+Enter number of children (max 100): 3
+
+--- Enter Staff Information ---
+Staff #1 Name: Alice Johnson
+Year of Birth: 1985
+Gender: F
+Job Title: Infant Teacher
+Weekly Hours: 45
+Wage Rate: 20.0
+Hiring Year: 2010
+
+Staff #2 Name: Bob Smith
+Year of Birth: 1990
+Gender: M
+Job Title: Toddler Teacher
+Weekly Hours: 40
+Wage Rate: 18.5
+Hiring Year: 2015
+
+Staff #3 Name: Carol Lee
+Year of Birth: 1988
+Gender: F
+Job Title: Preschool Teacher
+Weekly Hours: 50
+Wage Rate: 22.0
+Hiring Year: 2012
+
+--- Enter Children Information ---
+Child #1 Name: Dave Brown
+Year of Birth: 2023
+Gender: M
+Parent Name: John Brown
+Parent Phone: 555-1234
+Parent Language: English
+Allergies (true/false): true
+Days/Week: 3
+Shift (1=AM,2=PM,3=Full): 1
+Drop Off Time: 7:00
+Pick Up Time: 12:00
+
+Child #2 Name: Eve Green
+Year of Birth: 2021
+Gender: F
+Parent Name: Mary Green
+Parent Phone: 555-5678
+Parent Language: Spanish
+Allergies (true/false): false
+Days/Week: 4
+Shift (1=AM,2=PM,3=Full): 3
+Drop Off Time: 8:30
+Pick Up Time: 17:30
+
+Child #3 Name: Frank White
+Year of Birth: 2019
+Gender: M
+Parent Name: Linda White
+Parent Phone: 555-8765
+Parent Language: French
+Allergies (true/false): true
+Days/Week: 5
+Shift (1=AM,2=PM,3=Full): 2
+Drop Off Time: 6:45
+Pick Up Time: 16:00
+
+--- Parent Ratings for Staff ---
+Parent #1:
+  Alice Johnson: 5.0
+  Bob Smith:     4.0
+  Carol Lee:     3.0
+
+Parent #2:
+  Alice Johnson: 5.0
+  Bob Smith:     3.0
+  Carol Lee:     4.0
+
+
+--- Staff by Avg Rating (High→Low) ---
+Alice Johnson — Avg: 5.00 (Excellent)
+Bob Smith     — Avg: 3.50 (Good)
+Carol Lee     — Avg: 3.50 (Good)
+
+--- Staff Eligible for Promotion (5.0) ---
+Alice Johnson
+
+--- Staff Experience, Pay, Salary & Net Income ---
+Alice Johnson: 14 yrs, Weekly $950.00, Annual $49400.00, Net $46930.00
+Bob Smith    :  9 yrs, Weekly $740.00, Annual $38480.00, Net $36556.00
+Carol Lee    : 12 yrs, Weekly $1210.00, Annual $62920.00, Net $59874.00
+
+--- Infant Teachers ---
+Alice Johnson
+
+--- Children Status & Billing ---
+Dave Brown (Infant, Age 1):     $240.00/week, 20% off, Early drop-off fee 2%, Total $195.84
+Eve Green (Toddler, Age 3):    $480.00/week, 20% off, Late pick-up fee 2%, Total $391.68
+Frank White (Preschool, Age 5):$200.00/week, 20% off, Early drop-off fee 2%, Total $163.20
+
+Youngest: 1, Oldest: 5
+Highest Bill: $391.68, Lowest Bill: $163.20
+
+--- Parent Ratings Matrix ---
+Parent #1: Alice Johnson=5.0  Bob Smith=4.0  Carol Lee=3.0  
+Parent #2: Alice Johnson=5.0  Bob Smith=3.0  Carol Lee=4.0  

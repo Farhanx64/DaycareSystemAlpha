@@ -1,0 +1,103 @@
+BEGIN
+
+  SET MAX = 100
+  SET CURRENT_YEAR = 2024
+  SET TAX_RATE = 0.05
+
+  PROMPT "Enter number of parents:"
+  READ parentCount
+  PROMPT "Enter number of staff members:"
+  READ staffCount
+  PROMPT "Enter number of children:"
+  READ childCount
+
+  CREATE arrays:
+    Staff[staffCount]
+    Children[childCount]
+    Ratings[parentCount][staffCount]
+
+  FOR each staff member i from 0 to staffCount - 1 DO
+    PROMPT for name, birth year, gender, job title, weekly hours, wage rate, hiring year
+    INITIALIZE Staff[i] with entered values
+  END FOR
+
+  FOR each child j from 0 to childCount - 1 DO
+    PROMPT for name, birth year, gender, parent name, phone, language, allergies, days/week, shift, drop/pick time
+    INITIALIZE Children[j] with entered values
+  END FOR
+
+  FOR each parent p from 0 to parentCount - 1 DO
+    FOR each staff member s from 0 to staffCount - 1 DO
+      PROMPT "Rate staff s:"
+      READ Ratings[p][s]
+    END FOR
+  END FOR
+
+  // Calculate average ratings for each staff
+  FOR s = 0 to staffCount - 1 DO
+    sum = 0
+    FOR p = 0 to parentCount - 1 DO
+      sum = sum + Ratings[p][s]
+    END FOR
+    Staff[s].avgRating = sum / parentCount
+  END FOR
+
+  // Sort staff by avgRating (descending)
+  FOR i = 0 to staffCount - 2 DO
+    FOR j = 0 to staffCount - i - 2 DO
+      IF Staff[j].avgRating < Staff[j+1].avgRating THEN
+        SWAP Staff[j] and Staff[j+1]
+      END IF
+    END FOR
+  END FOR
+
+  // Display staff summary
+  FOR EACH staff s in Staff DO
+    PRINT s.name, s.avgRating, Service Level (based on avg)
+    CALCULATE experience, weekly pay, annual salary, net income
+    PRINT results
+  END FOR
+
+  // Display promotion eligible staff
+  FOR EACH staff s in Staff DO
+    IF s.avgRating == 5.0 THEN
+      PRINT s.name is eligible for promotion
+    END IF
+  END FOR
+
+  // Display Infant Teachers
+  FOR EACH staff s in Staff DO
+    IF s.jobTitle == "Infant Teacher" THEN
+      PRINT s.name
+    END IF
+  END FOR
+
+  // Billing for children
+  SET youngest = large number
+  SET oldest = small number
+  SET lowestBill = large number
+  SET highestBill = 0
+
+  FOR EACH child c in Children DO
+    CALCULATE age = CURRENT_YEAR - c.birthYear
+    DETERMINE base rate from age
+    DETERMINE hours per day from shift
+    CALCULATE weeklyBill = days/week * rate * hours
+    CALCULATE discount and final bill
+    CALCULATE time fee (early/late)
+    CALCULATE total = discounted * (1 + timeFee)
+    UPDATE youngest, oldest, highestBill, lowestBill as needed
+    PRINT billing summary for c
+  END FOR
+
+  PRINT youngest, oldest, highest and lowest bill values
+
+  // Print ratings matrix
+  FOR p = 0 to parentCount - 1 DO
+    PRINT "Parent p+1:"
+    FOR s = 0 to staffCount - 1 DO
+      PRINT staff name and rating
+    END FOR
+  END FOR
+
+END

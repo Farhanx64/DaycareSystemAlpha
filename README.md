@@ -118,7 +118,7 @@ Java JDK 8 or higher installed
 
 ### Compilation
 ```bash
-cd c:\Users\farha\OneDrive\المستندات\javaproject\daycaresystem4
+cd c:\Users\"location"
 javac *.java
 ```
 
